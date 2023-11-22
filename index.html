@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./assets/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Gonzalo Yacante" />
+    <meta name="copyright" content="Gonzalo Yacante" />
+    <meta
+      name="description"
+      content="Gonzalo Yacante - Multi-step Register Form" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500;700;900&display=swap"
+      rel="stylesheet" />
+    <title>Multi-step Register Form</title>
+  </head>
+  <body>
+    <form class="container">
+      <div id="step1" class="step">
+        <h2 class="step-title">Register</h2>
+        <label for="name">
+          Name <br />
+          <input type="text" id="name" placeholder="enter your name" />
+        </label>
+
+        <label for="email">
+          Email <br />
+          <input type="text" id="email" placeholder="example@gmail.com" />
+        </label>
+        <button onclick="nextStep(event, 2)">Continue</button>
+      </div>
+
+      <div id="step2" class="step inactive">
+        <h2 class="step-title">Which topics you are interested in?</h2>
+
+        <input
+          type="checkbox"
+          id="category1"
+          name="category"
+          value="Software Development" />
+        <label for="category1"> Software Development </label>
+
+        <input
+          type="checkbox"
+          id="category2"
+          name="category"
+          value="User Experience" />
+        <label for="category2"> User Experience </label>
+
+        <input
+          type="checkbox"
+          id="category3"
+          name="category"
+          value="Graphic Design" />
+        <label for="category3"> Graphic Design </label>
+        <button onclick="nextStep(event, 3)">Continue</button>
+      </div>
+
+      <div id="step3" class="step inactive">
+        <h2 class="step-title">Summary</h2>
+        <p class="step-text">
+          Name: <span id="summary-name">Here is your name</span>
+          <br />
+          Email: <span id="summary-email">example@gmail.com</span>
+        </p>
+        <div>
+          <p class="step-text">Topics:</p>
+          <ul id="summary-category"></ul>
+        </div>
+        <button>Confirm</button>
+      </div>
+    </form>
+    <article class="step-counter">
+      <p class="step-counter_text">
+        Step <span id="step-counter_text">1</span> of 3
+      </p>
+      <div id="step-counter_indicator"></div>
+    </article>
+    <script src="./index.js"></script>
+  </body>
+</html>
